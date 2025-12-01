@@ -55,6 +55,7 @@
       li {
         margin-bottom: 12px;
       }
+      
     </style>
   </head>
 
@@ -66,8 +67,36 @@
       <div class="text">
         <p><b>Dear friends!</b><br /><br />Thank you for choosing our script to be used for your website. We are making great efforts to make the script acessible and understandable as much as possible, but we strongly recommend you to read the full documentation of the script before you start working with it. Documentation is available in the <a href="readme.chm">readme.chm</a> file.</p>
         <p><b>Script installation on the server</b> </p>
-        <p>Script installation on the server is fully automated</p>
+        <p>Script installation on the server is fully automated and should not cause any problems, but you need to perform some steps to set access rights to folders.</p>
+        <ol type="1">
+          <li>
+            First, copy all the files from the <b>upload</b> folder of this archive to your server.
+          </li>
+
+          <li>
+            Make the <b>templates</b> folder and all its subfolders writable. (CHMOD 777)
+          </li>
+
+
+          <li>
+            Make <b>backup</b>, <b>uploads</b> folders writable, as well as all the folders inside them. (CHMOD 777)
+          </li>
+
+          <li>
+            Make the following folders writable (CHMOD 777) <b>/engine/data/</b>, <b>/engine/cache/</b>.
+          </li>
+
+          <li>
+            Run the <b>install.php</b> file and follow the instructions. Automatic installer will check all the necessary files and adjust connection to the database. After installation is complete, you can go to demo page <b>http://website.com/index.php</b> and see how the script works. To access the administration panel, you must go to <b>http://website.com/admin.</b>
+          </li>
+        </ol>
+        <div class="fineprint">
+          <p><font color="red">Attention:</font> When you install or upgrade the script on the server, be sure to remove the <b>install.php</b> file. Otherwise it will be possible to re-initiate the script installation process, thus destroying the existing data structure.</p>
+        </div>
+        <p>We hope that you enjoy working with our script.<br /><br /><b>Best regards,<br /><br />SoftNews Media Group</b></p>
+        
       </div>
     </div>
+    <br />
   </body>
 </html>
