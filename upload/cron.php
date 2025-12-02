@@ -115,6 +115,104 @@ if ($allow_cron) {
     die("done");
   } elseif ($cronmode == "antivirus") {
 
-    include_once(DLEPlugins::);
+    include_once(DLEPlugins::Check(Engine_Dir . '/classes/antivirus.class.php'));
+
+    $antivirus = new antivirus();
+    $antivirus->scan_files(ROOT_DIR, false, true);
+
+    if (count($antivirus->bad_files)) {
+     $found_files = "";
+
+     foreach ($antivirus->bad_files as $idx => $data) {
+      if ($data['type']) {
+       $type = $lang['anti_modified'];
+      } else {
+       $type = $lang['anti_not'];
+      }
+      $found_files .= "\n{$data['file_path']} {$type}\n";
+     }
+
+     $mail = dle_mail($config);
+
+     $message = $lang['anti_message_1'] . "\n{$found_files}\n{$lang['anti_message_2']}\n\n{$lang['lost_mfg']} " . $config['http_home_url'];
+     $mail->send($config['admin_mail'], $lang['anti_subj'], $message);
+    }
+
+    die("done");
+   
+  } else {
+
+   $files = array();
+   $disk = DLEFiles::getDefaultStorage();
+   $config['backup_remote'] = intval($config['backup_remote']);
+   if ( $config['backup_remote'] > -1 ) $disk = $config['backup_remote'];
+
+   if( $disk ) {
+
+    DLEFiles::init($disk, false);
+
+    $tmp_files = DLEFiles::ListDirectory("backup/", array("sql", "gz", "bz2"));
+
+    if (!DLEfiles::$error) {
+
+     foreach ($tmp_files['files'] as $key) {
+       if (isset($key['name']) and $key['name']) {
+         $prefix = explode("_", $key['name'] );
+         $prefix = end($prefix);
+         $prefix = explode(".", $prefix);
+         $prefix = reset($prefix);
+
+         if (strlen($prefix) == 32) {
+           $files[] = $key['path'];
+         }
+       }
+     }
+    }
+   } else {
+
+     if (is_dir(ROOT_DIR . '/backup/') && $handle = opendir(ROOT_DIR . '/backup/')) {
+       while (false !== ($file = readdir($handle))) {
+         if (preg_match("\^.+?\.sql(\.(gz|bz2))?$/", $file)) {
+
+           $prefix = explode("_", $file);
+           $prefix = end($prefix);
+           $prefix = explode(".", $prefix);
+           $prefix = reset($prefix);
+
+           if (strlen($prefix) == 32) {
+             $files[] = $file;
+           }
+         }
+       }
+       closedir($handle);
+     }
+   }
+
+   sort($files);
+   reset($files);
+
+   if (count($files) >= $max_count_files) {
+
+     if ($disk) {
+       DLEFiles::Delete($files[0]);
+     } else {
+       unlink(ROOT_DIR . '/backup/' . $files[0]);
+     }
+    
+   }
+
+    $member_id = array();
+    $member_id['user_group'] = 1;
+    $member_id['name'] = "cron_auto_backup";
+    $_REQUEST['action'] = "backup";
+    $_POST['comp_method'] = 1;
+    $_TIME = time();
+    $_IP = "127.0.0.1";
+
+    include_once(DLEPlugins::Check(ROOT_DIR . '/engine/inc/dumper.php'));
+
+    die("done");
   }
 }
+
+die("Cron not allowed");
