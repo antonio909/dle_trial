@@ -1,0 +1,17 @@
+<?php
+/*
+=====================================================
+ DataLife Engine - by SoftNews Media Group
+-----------------------------------------------------
+ https://dle-news.ru/
+-----------------------------------------------------
+ Copyright (c) 2004,2025 SoftNews Media Group
+-----------------------------------------------------
+ You use Demo Version of DataLife Engine
+=====================================================
+*/
+?><?php
+$_F=__FILE__;
+$_X='PzdqPzZENmdjKmdXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV2dPSUFWQVRaaXRPZl09Wl10Ty1PM2RPTjJpVmV0TFlPe3RsWkFPeVEyPjZnLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1nT0RWVjZZOmNjbHZ0LV10TFlYUT5jZy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tZ091MjZkUVo9RFZPKHEpT0ZQUEotRlBGIE9OMmlWZXRMWU97dGxaQU95UTI+NmdXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV2dPc0RaWU9xMmx0T1pZTzZRMlZ0cVZ0bE8zZE9xMjZkUVo9RFZnV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dnKmNnZ2x0aVpddCgnSThzOFQ1emZmZXk1ZWYnLE9WUT50KTtnbHRpWl10KCd4bm5zX0k1eCcsT2xaUV1BW3QoX196NVRmX18pKTtnbHRpWl10KCdmZXk1ZWZfSTV4JyxPeG5uc19JNXhPWE8nY3RdPVpddCcpO2dnUXRIPlpRdF8yXXF0KGZleTVlZl9JNXhPWE8nY3F2QVlZdFljNnY+PVpdWVhxdkFZWVg2RDYnKTtnUXRIPlpRdF8yXXF0KElUZn12Pj1aXVk6OnVEdHFwKHhubnNfSTV4T1hPJ2N0XT1aXXRjWl1aVlg2RDYnKSk7Zw==';
+$_D=strrev('edoced_46esab');
+eval($_D('JF9YPWJhc2U2NF9kZWNvZGUoJF9YKTskX1g9c3RydHIoJF9YLCd1dzNCeHZWMVVdekdieUEvSjQ9U0ZpamFbPmRzZUlDdHFUWjVRUllXNlBOcGs4SHJECktPIEwuOWc3TW1sezAyPEVjb25ofWZYJywnQ0hialJsdFk5bkZRNkdhejQzZ0IyZjxKbXV5VE5EVmVjTGlJcltzPXAwU2t4QXE3aDFVIDV3Wl0KPlh2ZE17b0t9LzhPV1BFLicpOyRfUj1zdHJfcmVwbGFjZSgnX19GSUxFX18nLCInIi4kX0YuIiciLCRfWCk7ZXZhbCgkX1IpOyRfUj0wOyRfWD0wOw=='));?>
